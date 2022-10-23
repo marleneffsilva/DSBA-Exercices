@@ -4,11 +4,11 @@ This repository contains some of my data science/analysis projects completed by 
 The DSBA Course has the following modules:
 
 - Data Science Fundamentals
-      Data Science Definition / Applications
-      Data Mining main branches/techniques
-      Python Fundamentals – Key concepts
-      Data Understanding
-      Data loading and cleansing, Plotting, Feature extraction
+      -Data Science Definition / Applications
+      -Data Mining main branches/techniques
+      -Python Fundamentals – Key concepts
+      -Data Understanding
+      -Data loading and cleansing, Plotting, Feature extraction
 - Database Fundamentals
       Database concept
       Datawarehouse concept
