@@ -9,6 +9,7 @@ The DSBA Course has the following modules:
       - Python Fundamentals – Key concepts
       - Data Understanding
       - Data loading and cleansing, Plotting, Feature extraction
+      - Tools used: Jupyter Notebook and Spyder
 - Database Fundamentals
       - Database concept
       Datawarehouse concept
