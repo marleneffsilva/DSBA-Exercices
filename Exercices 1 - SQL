@@ -1,0 +1,39 @@
+CREATE TABLE IF NOT EXISTS customer(
+  customer_id int PRIMARY KEY,
+  customer_name VARCHAR (25)
+);
+select * from customer;
+CREATE TABLE IF NOT EXISTS product(
+  product_id int PRIMARY KEY,
+  prod_name VARCHAR (40),
+    price numeric (5,2) NOT NULL,
+    Last_updt_date TIMESTAMP
+);
+select * from product;
+CREATE TABLE IF NOT EXISTS orders(
+  date TIMESTAMP,
+    customer_id int,
+  product_id int,
+    quantity numeric (5,2) NOT NULL,
+    foreign key (customer_id) references customer (customer_id),
+    foreign key (product_id) references product (product_id)
+);
+select * from orders;
+alter table orders
+add constraint PK_order primary key (date,customer_id,product_id);
+insert into product (product_id,prod_name,price,last_updt_date) values 
+(1000,'Product1',200.50,now()),
+(1001,'Product2',205.50,now()),
+(1002,'Product3',215.50,now()),
+(1003,'Product4',225.50,now()),
+(1004,'Product5',235.50,now())
+insert into customer (customer_id,customer_name) values 
+(1100,'Customer1'),
+(1101,'Customer2'),
+(1102,'Customer3'),
+(1103,'Customer4'),
+(1104,'Customer5')
+insert into orders (date, customer_id,product_id,quantity) values
+('2022-03-30 00:20:30',1100,1000,200.00),
+('2022-03-30 00:20:30',1100,1001,200.00),
+('2022-03-30 00:20:30',1100,1002,200.00)
