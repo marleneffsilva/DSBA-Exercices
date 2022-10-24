@@ -1,3 +1,54 @@
+#Use Case 1
+
+create table country(
+country_id INT PRIMARY KEY,
+country_name VARCHAR (25) UNIQUE NOT NULL,
+language VARCHAR (20)
+);
+
+create table city(
+city_id INT PRIMARY KEY,
+city_name VARCHAR (25) NOT NULL,
+country_id int not null,
+region VARCHAR (20),
+FOREIGN KEY (country_id) REFERENCES country (country_id)
+);
+
+create table address(
+address_id INT,
+street VARCHAR (40),
+number int,
+city_id INT,
+last_updt_date timestamp
+);
+
+ALTER TABLE address 
+ADD CONSTRAINT pk_address Primary KEY (address_id,number);
+
+ALTER TABLE address 
+ADD CONSTRAINT fk_address_city FOREIGN KEY (city_id) REFERENCES 
+city (city_id);
+
+ALTER TABLE address DROP CONSTRAINT pk_address;
+ALTER TABLE address 
+ADD CONSTRAINT pk_address Primary KEY (address_id);
+
+INSERT INTO country(country_id,country_name,language) VALUES 
+(1 ,'Portugal','pt'),
+(2,'Spain','es');
+
+COPY city(city_id,city_name,country_id, region)
+FROM 'C:\Users\Public\city.txt' 
+DELIMITER ',' CSV HEADER;
+
+INSERT INTO address(address_id,street,number, city_id,last_updt_date) 
+VALUES 
+(1,'Rua torta',1,1,now()),
+(2,null,1,2,now()),
+(3,'Rua direita',2,2,now());
+
+#Evaluation Exercice
+
 CREATE TABLE IF NOT EXISTS customer(
   customer_id int PRIMARY KEY,
   customer_name VARCHAR (25)
