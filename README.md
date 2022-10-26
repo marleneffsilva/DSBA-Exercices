@@ -90,5 +90,5 @@ The DSBA Course has the following modules:
       - Machine Learning models in Python
 
 # Exercice 1 : SQL Exercice
-This is a compilation of the code made during the module "SQL fundamentals"
+This is a compilation of the code made during the module "Database Fundamentals"
 # Exercice 2 : 
