@@ -89,6 +89,7 @@ The DSBA Course has the following modules:
       - Business Understanding, Data Understanding, Data Preparation, Modelling and Evaluation
       - Machine Learning models in Python
 
-# Exercice 1 : SQL Exercice
+# Exercice 1 : SQL Exercices
 This is a compilation of the code made during the module "Database Fundamentals"
-# Exercice 2 : 
+# Exercice 2 : Python Exercices
+This is a compilation of the code made during the module "Explore Data Analysis"
