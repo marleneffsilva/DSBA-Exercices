@@ -96,3 +96,5 @@ The DSBA Course has the following modules:
 This is a compilation of the code made during the module "Database Fundamentals"
 # Exercice 2 : Python Exercices
 This is a compilation of the code made during the module "Explore Data Analysis"
+# Exercice 3 : Ms Power BI Exercices
+This is the final exercice created in the module "Analyzing & Visualizing Data"
