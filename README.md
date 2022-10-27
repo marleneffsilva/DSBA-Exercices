@@ -92,11 +92,11 @@ The DSBA Course has the following modules:
       - Business Understanding, Data Understanding, Data Preparation, Modelling and Evaluation
       - Machine Learning models in Python
 
-# Exercice 1 : SQL Exercices
+# WIP---Exercice 1 : SQL Exercices
 This is a compilation of the code made during the module "Database Fundamentals"
-# Exercice 2 : Python Exercices
+# WIP---Exercice 2 : Python Exercices
 This is a compilation of the code made during the module "Explore Data Analysis"
-# Exercice 3 : Ms Power BI Exercices
+# WIP---Exercice 3 : Ms Power BI Exercices
 This is the final exercice created in the module "Analyzing & Visualizing Data"
-WIP---# Exercice 4 : Applied Practice Module
-WIP---People Analytics - Analysis of a Performance and Recruitment Framework developed and used by a data driven company (real data).
+# WIP---Exercice 4 : Applied Practice Module
+People Analytics - Analysis of a Performance and Recruitment Framework developed and used by a data driven company (real data).
