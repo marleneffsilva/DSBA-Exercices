@@ -1,3 +1,6 @@
+A Work in Progress project
+
+
 # DSBA-Exercices
 This repository contains some of my data science/analysis projects completed by me during the Data Sciende and Business analytics course. In this repository will not have only the projects cpmpleted during the course, but all projects that I do for self learning and hobby purposes. The aim is practicing all the contents learned in the course to develop my data analysis skills and obtain experience through self practice.
 
