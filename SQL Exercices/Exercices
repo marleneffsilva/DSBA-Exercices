@@ -1,0 +1,139 @@
+Exercice 1 - 
+    Select only the first_name;
+    Select only first and last names;
+    Select only distinct first_name;
+    Select only first_name that is different from Nick;
+    
+    Solution: --Select only the first_name;
+                select first_name from actor;
+              --Select only first and last names;
+                select first_name, last_name from actor;
+              --Select only distinct first_name;
+                select distinct first_name from actor;
+              --Select only first_name that is different from Nick;
+                select first_name, last_name
+                from actor
+                where first_name !='Nick';
+
+Exercice 2- 
+    Select all columns sorted by last_name;
+    Select all columns sorted by last_name but descending;
+    Select all columns if first_name starts by ‘B
+    
+    Solution: -- Select all columns sorted by last_name;
+                 select * from actor
+                 order by last_name;
+              --Select all columns sorted by last_name but descending;
+                 select * from actor
+                 order by last_name desc;
+              --Select all columns if first_name starts by ‘B’
+                 select * from actor
+                 where first_name like 'B%';
+                 
+Exercice 3 - 
+    Count the records on table actor;
+    For each first_name, calculate the number of occurrences;
+    Create an alias for the countings column (eg.: howmany);
+    
+    Solution: -- Count the records on table actor;
+                 Select count(*) from actor;
+              --For each first_name, calculate the number of occurrences;
+                select first_name,count(first_name) howmany
+                from actor
+                group by first_name;
+                
+Exercice 4 -
+    Select first 6 rows of table actor.
+    Select 4 rows (from the 3rd until the 6th) from table actor.
+    Same as before, using fetch.
+    
+    Solution: --Select first 4 rows of table actor.
+                select * from actor limit 4;
+              --Select 4 rows (from the 3rd until the 6th) from table actor.
+                select * from actor offset 2 limit 4;
+              --Same as before, using fetch.
+                select * from actor 
+                offset 2 rows 
+                fetch first 4 row only;
+                
+Exercice 5 - 
+    For each customer_id in payment table, show the total of the amounts paid;
+    Same as before, filtering the customers that spent more than 200€.
+    
+    Solution: --For each customer_id in payment table, show the sum of the amounts paid
+                select customer_id, sum(amount) 
+                from payment
+                group by customer_id;
+              --Same as before, filtering the customers that spent more than 200€.
+                select customer_id, sum(amount) 
+                from payment
+                group by customer_id
+                having sum(amount) > 200;
+                
+Exercice 6 - 
+    Select customers from customer table whose customer_id is bigger than 9 and lower than 15;
+    Select customers from customer table if their first name is Lisa or Marion.
+    Select all records from staff which picture is null.
+    
+    Solution: --Select customers from customer table whose customer_id is bigger than 9 and lower than 15;
+                select * from customer where customer_id between 10 and 14;
+              --Select customers from customer table if their first name is Lisa or Marion.
+                select * from customer
+                where first_name in('Lisa','Marion');--notice that ‘in’ clause can be used with sub-queries
+              --Select all records from staff which picture is null.
+                select * from staff 
+                where picture is null
+                
+Exercice 7 - 
+    In which films (titles) did each actor performed?
+    Display first and last name in same column (eg.: 'Jared Ely');
+    Sort by actor full name
+    List only actors whose first name ends in 'm'
+
+    Solution: select a.first_name ||' '||a.last_name a_name, f.title
+              from actor a join film_actor fa on a.actor_id=fa.actor_id
+              join film f on f.film_id=fa.film_id
+              where a.first_name like '%m'
+              order by a_name
+              
+Exercice 8 -
+    List the category name’s having more than 65 films.
+    Present 3 solutions: using having; using having but replacing category table by one subquery and using a sub-query instead of having.
+    
+    Solution: -- List the category name’s having more than one film
+                 select name
+                 from category c join film_category fc on c.category_id=fc.category_id
+                 join film on fc.film_id=film.film_id
+                 group by c.name
+                 having count(film.film_id)>65
+                 order by name;
+
+                 select name
+                 from (select distinct name, category_id from category) c join film_category fc on c.category_id=fc.category_id
+                 join film on fc.film_id=film.film_id
+                 group by c.name
+                 having count(title)>65
+                 order by name;
+                 
+                 select name
+                 from category c
+                 where category_id in(
+                  select category_id
+                  from film_category fc join film on fc.film_id=film.film_id
+                  group by category_id
+                  having count(title)>65)
+                 order by name;
+                 
+ Exercice 9 - 
+    Update students whose name as an 'a': age (if it is null, replace it by 50); name (concatenating nif; eg.: Anne123)
+    Update students: change all create_dates to current date
+    
+    Solution: --Update students whose name as an 'a': age (if it is null, replace it by 50); name (concatenating nif; eg.: Anne123)
+                UPDATE students
+                SET age = coalesce(age,50),
+                  name = name||nif
+                where lower(name) like '%a%';
+              --Update students: change all create_dates to current date
+                UPDATE students
+                SET create_date = now();
+
