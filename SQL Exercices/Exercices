@@ -1,4 +1,4 @@
-Exercice 1 - 
+# Exercice 1 - 
     Select only the first_name;
     Select only first and last names;
     Select only distinct first_name;
@@ -15,7 +15,7 @@ Exercice 1 -
                 from actor
                 where first_name !='Nick';
 
-Exercice 2- 
+# Exercice 2- 
     Select all columns sorted by last_name;
     Select all columns sorted by last_name but descending;
     Select all columns if first_name starts by ‘B
@@ -30,7 +30,7 @@ Exercice 2-
                  select * from actor
                  where first_name like 'B%';
                  
-Exercice 3 - 
+# Exercice 3 - 
     Count the records on table actor;
     For each first_name, calculate the number of occurrences;
     Create an alias for the countings column (eg.: howmany);
@@ -42,7 +42,7 @@ Exercice 3 -
                 from actor
                 group by first_name;
                 
-Exercice 4 -
+# Exercice 4 -
     Select first 6 rows of table actor.
     Select 4 rows (from the 3rd until the 6th) from table actor.
     Same as before, using fetch.
@@ -56,7 +56,7 @@ Exercice 4 -
                 offset 2 rows 
                 fetch first 4 row only;
                 
-Exercice 5 - 
+# Exercice 5 - 
     For each customer_id in payment table, show the total of the amounts paid;
     Same as before, filtering the customers that spent more than 200€.
     
@@ -70,7 +70,7 @@ Exercice 5 -
                 group by customer_id
                 having sum(amount) > 200;
                 
-Exercice 6 - 
+# Exercice 6 - 
     Select customers from customer table whose customer_id is bigger than 9 and lower than 15;
     Select customers from customer table if their first name is Lisa or Marion.
     Select all records from staff which picture is null.
@@ -84,7 +84,7 @@ Exercice 6 -
                 select * from staff 
                 where picture is null
                 
-Exercice 7 - 
+# Exercice 7 - 
     In which films (titles) did each actor performed?
     Display first and last name in same column (eg.: 'Jared Ely');
     Sort by actor full name
@@ -96,7 +96,7 @@ Exercice 7 -
               where a.first_name like '%m'
               order by a_name
               
-Exercice 8 -
+# Exercice 8 -
     List the category name’s having more than 65 films.
     Present 3 solutions: using having; using having but replacing category table by one subquery and using a sub-query instead of having.
     
@@ -124,7 +124,7 @@ Exercice 8 -
                   having count(title)>65)
                  order by name;
                  
- Exercice 9 - 
+ # Exercice 9 - 
     Update students whose name as an 'a': age (if it is null, replace it by 50); name (concatenating nif; eg.: Anne123)
     Update students: change all create_dates to current date
     
